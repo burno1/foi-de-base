@@ -7,7 +7,7 @@ import {Phrases} from "./model";
   providedIn: 'root'
 })
 export class PhraseService {
-  private phrasesUrl : string = '/assets/data.json'
+  private phrasesUrl : string = '/foi-de-base/assets/data.json'
 
   constructor(private http: HttpClient) { }
 
