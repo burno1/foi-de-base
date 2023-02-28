@@ -8,14 +8,13 @@ import {PhraseService} from "./phrase.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'frontend';
+  title = 'f no chat';
 
   constructor(private http: HttpClient, private phrasesService: PhraseService) {
   }
 
   ngOnInit(): void {
     this.phrasesService.getPhrases().subscribe(({phrases}) => {
-      console.log(phrases)
       this.title = phrases[this.getRandomInt(phrases.length-1)]
     })
 
