@@ -1,9 +1,7 @@
-package com.fernandes.bruno.foidebase.controllers;
+package com.fernandes.bruno.app.controllers;
 
-import com.fernandes.bruno.foidebase.services.JsonService;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fernandes.bruno.app.services.JsonService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PhraseController {
 
   private final JsonService jsonService;
 
   @GetMapping("/phrases")
-  public ResponseEntity<String[]> getPhrases() {
+  public ResponseEntity<String> getPhrases() {
     String[] phrases = jsonService.getPhrases();
-    return new ResponseEntity<>(phrases, HttpStatus.OK);
+    int randomIndex = (int) (Math.random() * phrases.length);
+    return new ResponseEntity<>(phrases[randomIndex], HttpStatus.OK);
   }
 }

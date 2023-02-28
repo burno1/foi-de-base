@@ -1,4 +1,4 @@
-package com.fernandes.bruno.foidebase;
+package com.fernandes.bruno.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

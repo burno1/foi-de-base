@@ -1,7 +1,6 @@
-package com.fernandes.bruno.foidebase.services;
+package com.fernandes.bruno.app.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -28,8 +27,7 @@ public class JsonService {
 
   private void loadPhrases() {
     try {
-      ClassPathResource resource = new ClassPathResource("data.json");
-      InputStream inputStream = resource.getInputStream();
+      InputStream inputStream = getClass().getClassLoader().getResourceAsStream("data.json");
       DataModel data = objectMapper.readValue(inputStream, DataModel.class);
       phrases = data.getPhrases();
     } catch (IOException e) {
