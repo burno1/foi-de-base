@@ -7,7 +7,7 @@ import {PhraseService} from "./phrase.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'f no chat';
 
   constructor(private http: HttpClient, private phrasesService: PhraseService) {
@@ -15,12 +15,12 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.phrasesService.getPhrases().subscribe(({phrases}) => {
-      this.title = phrases[this.getRandomInt(phrases.length-1)]
+      this.title = phrases[this.getRandomInt(phrases.length - 1)]
     })
 
   }
 
-  getRandomInt(max:number):number  {
+  getRandomInt(max: number): number {
     const min = 0;
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive

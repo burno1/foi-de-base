@@ -31,7 +31,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/foi-de-base/",
+              "baseHref": "https://burno1.github.io/foi-de-base/",
               "budgets": [
                 {
                   "type": "initial",
