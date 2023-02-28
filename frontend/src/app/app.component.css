@@ -74,24 +74,6 @@ svg.material-icons {
   position: relative;
 }
 
-.card.card.highlight-card span {
-  margin-left: 60px;
-}
-
-
-
-
-
-
-
-
-
-/*.main-content{*/
-/*  display: flex;*/
-/*  justify-content: space-evenly;*/
-/*  align-items: center;*/
-/*}*/
-
 svg#clouds {
   position: fixed;
   bottom: -160px;
